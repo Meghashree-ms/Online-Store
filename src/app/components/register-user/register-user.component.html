@@ -1,0 +1,119 @@
+<h2  style="text-align: center;"> REGISTRATION FORM</h2>
+<h2 *ngIf="userDetails.userName!=''" style="text-align: center;"> {{userDetails.userName}} ADDED SUCCESSFULLY </h2>
+<!-- <h2 *ngIf = "registrationStatus">{{userDetails.userName}} SUCCESSFULLY REGISTERED</h2>
+<h2 *ngIf = "!registrationStatus"> USER EXISTS ALREADY,LOGIN</h2> -->
+
+<img src ="assets/homepage.jpg">
+
+<form #registration="ngForm" (ngSubmit)= "onSubmit(registration.value)">
+<label>ENTER USERNAME: </label>
+<input type="text"name="name" size="50" minlength="6" maxlength="20" pattern="[a-zA-Z ]*" required #name="ngModel" [(ngModel)]="UserRegister.name">
+<div *ngIf="name.errors && (name.dirty || name.touched)">
+    <div [hidden]="!name.errors.required">
+        USERNAME is a required field.
+    </div>
+    <div [hidden]="!name.errors.minlength">
+        USERNAME cannot be less than 6 characters.
+    </div>
+    <div [hidden]="!name.errors.maxlength">
+        USERNAME cannot be more than 20 characters.
+    </div>
+    <div [hidden]="!name.errors.pattern">
+        Name does not match the pattern (Only alphabets allowed).
+    </div>
+</div>
+<br><br>
+    <label>ENTER EMAIL: </label>
+    <input type="text"name="email" size="56" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required #email="ngModel" [(ngModel)]="UserRegister.email">
+    <div *ngIf="email.errors && (email.dirty || email.touched)">
+        <div [hidden]="!email.errors.required">
+            EMAIL is a required field.
+        </div>
+        <div [hidden]="!email.errors.pattern">
+            EMAIL does not match the pattern.
+        </div>
+    </div>
+    <br><br>
+
+    <label>ENTER DOB: </label>
+<input type="date"name="dob" style="width:401px;height: 18px;" required #dob="ngModel" [(ngModel)]="UserRegister.dob">
+<div *ngIf="dob.errors && (dob.dirty || dob.touched)">
+    <div [hidden]="!dob.errors.required">
+        DOB is a required field.
+    </div>
+</div>
+<br><br>
+
+<label>ENTER CONTACT: </label>
+<input type="text"name="contact" minlength="10" size="52" maxlength="10" pattern="[0-9]*" required #contact="ngModel" [(ngModel)]="UserRegister.contact">
+<div *ngIf="contact.errors && (contact.dirty || contact.touched)">
+    <div [hidden]="!contact.errors.required">
+        CONTACT is a required field.
+    </div>
+    <div [hidden]="!contact.errors.minlength">
+        CONTACT cannot be less than 10 numbers.
+    </div>
+    <div [hidden]="!contact.errors.maxlength">
+        CONTACT cannot be more than 10 numbers.
+    </div>
+    <div [hidden]="!contact.errors.pattern">
+        Contact does not match the pattern(only numbers allowed).
+    </div>
+</div>
+<br><br>
+
+
+
+
+<label>GENDER:</label>   <input type="radio" name="gender" value="male" required #gender="ngModel" [(ngModel)]="UserRegister.gender">
+    <label for="male">MALE</label> <input type="radio" name="gender"
+        value="female" #gender="ngModel" [(ngModel)]="UserRegister.gender"> <label for="female">FEMALE</label> <input
+        type="radio" name="gender" value="other" #gender="ngModel" [(ngModel)]="UserRegister.gender"> <label for="other">OTHER</label><br><br>
+        
+
+
+<label>ENTER PASSWORD: </label>
+<input type="password"name="password" size="50" minlength="8" maxlength="20" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,18}$" required #password="ngModel" [(ngModel)]="UserRegister.password">
+<div *ngIf="password.errors && (password.dirty || password.touched)">
+    <div [hidden]="!password.errors.required">
+        PASSWORD is a required field.
+    </div>
+    <div [hidden]="!password.errors.minlength">
+        PASSWORD cannot be less than 8 characters.
+    </div>
+    <div [hidden]="!password.errors.maxlength">
+        PASSWORD cannot be more than 18 characters.
+    </div>
+    <div [hidden]="!password.errors.pattern">
+        PASSWORD does not match the pattern (1 lower-case, 1 upper-case, 1 number, 1 special character) .
+    </div>
+</div>
+<br><br>
+
+<label>CONFIRM PASSWORD: </label>
+<input type="password"name="confirmPassword" size="47" minlength="8" maxlength="20" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,18}$" required #confirmPassword="ngModel" [(ngModel)]="UserRegister.confirmPassword">
+<div *ngIf="confirmPassword.errors && (confirmPassword.dirty || confirmPassword.touched)">
+    <div [hidden]="!confirmPassword.errors.required">
+        PASSWORD is a required field.
+    </div>
+    <div [hidden]="!confirmPassword.errors.minlength">
+        PASSWORD cannot be less than 8 characters.
+    </div>
+    <div [hidden]="!confirmPassword.errors.maxlength">
+        PASSWORD cannot be more than 18 characters.
+    </div>
+    <div [hidden]="!confirmPassword.errors.pattern">
+        PASSWORD does not match the pattern (1 lower-case, 1 upper-case, 1 number, 1 special character).
+    </div>
+    <div [hidden]="password.value!=confirmPassword">
+        Passwords do not match.
+    </div>
+</div>
+<br><br>
+
+<input type="submit" value="Register"  [disabled]="!registration.valid">
+<input type="reset" value="Reset">
+
+</form>
+
+<!-- [routerLink]="'/login'" -->

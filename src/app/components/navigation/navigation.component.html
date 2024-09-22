@@ -1,0 +1,22 @@
+
+<div class="topnav"> 
+<nav >
+    <ul> 
+        <li><img src="assets/thestore.png"></li>
+      <li *ngIf= "loginStatus"><a routerLink="/allProducts" routerLinkActive="active">ALL PRODUCTS   </a></li>
+      <li *ngIf= "loginStatus"><a routerLink="/allProductsByType" routerLinkActive="active">SEARCH BY TYPE   </a></li> 
+      <li *ngIf= "loginStatus"><a routerLink="/editProduct" routerLinkActive="active">EDIT PRODUCTS   </a></li>
+      <li *ngIf= "loginStatus"><a routerLink="/deleteProduct" routerLinkActive="active">DELETE   </a></li>
+
+
+
+    <li *ngIf= "!loginStatus" style="float: right;"><a routerLink="/register" routerLinkActive="active">REGISTER   </a></li>
+    <li *ngIf= "!loginStatus" style="float: right;" ><a routerLink="/login" routerLinkActive="active">LOGIN</a></li>
+    <li *ngIf= "loginStatus" style="float: right;" ><a onclick="window.location.reload()" routerLink="/register" routerLinkActive="active">LOGOUT</a></li>
+
+    <!-- <li *ngIf="loginStatus" style="float: right;" ><a routerLink="/register" routerLinkActive="active">LOGOUT</a></li> -->
+
+    </ul>
+  </nav> 
+</div>
+  <router-outlet></router-outlet>

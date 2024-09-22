@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<img src ="assets/product.jpg">
+
+<form #getProductsByType="ngForm" (ngSubmit)= "onSubmit()" >
+
+    <input type="text"name="type" placeholder="Enter product type"  required #type="ngModel" [(ngModel)]="productsType">
+    &nbsp;
+    <button type="submit" ><i class="fa fa-search"></i></button>
+</form>
+
+
+<table border="3" class="productsTable" >
+    <thead *ngIf = "allProducts">
+        <tr>
+            <th>productName</th>
+            <th>productType</th>
+            <th>productPrice</th>
+            <th>productQuantity</th>
+            <th>productAvailability</th>
+            <th>productRating</th>
+
+            
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr *ngFor="let product of allProducts ">
+            <td><b>{{product.productName}}</b></td>
+            <td>{{product.productType}}</td>
+            <td>{{product.productPrice}}</td>
+            <td>{{product.productQuantity}}</td>
+            <td>{{product.productAvailability}}</td>
+            <td>{{product.productRating}}</td>
+
+           
+
+        </tr>
+    </tbody>
+</table>

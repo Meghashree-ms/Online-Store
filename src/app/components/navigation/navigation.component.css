@@ -1,0 +1,57 @@
+ul {
+    list-style-type: none;
+    margin: -18px;
+    padding: 0;
+    overflow: hidden;
+    background-color: #12232E;
+}
+
+li {
+    float: left;
+}
+
+li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #050505;
+}
+
+.active {
+    background-color: #FAED26;
+}
+
+
+
+input[type=text]{
+
+	height: 20px;
+    width: 600px;
+}
+
+button{
+    height: 28px;
+    width: 50px;
+    background-color: #FAED26;
+
+
+}
+
+form{
+    float: left;
+}
+
+form > input[type=text]{
+    margin-top: 11px;
+    height: 28px;
+}  
+
+img{
+
+    height: 40px;
+}

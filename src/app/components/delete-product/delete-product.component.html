@@ -1,0 +1,12 @@
+<img src ="assets/product.jpg">
+<h2 style="text-align: center;"> DELETE PRODUCT</h2>
+
+<h2 *ngIf="status" style="text-align: center;"> PRODUCT DELETED SUCCESSFULLY </h2>
+
+
+<form class="deleteByName" #deleteByName="ngForm" (ngSubmit)= "onSubmit()" >
+
+    <input type="text"name="type" placeholder="Enter product Name"  required #type="ngModel" [(ngModel)]="productsName">
+    &nbsp;
+    <button type="submit" >DELETE</button>
+</form>

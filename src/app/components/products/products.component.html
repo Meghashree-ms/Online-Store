@@ -1,0 +1,34 @@
+<img src ="assets/book.jpeg">
+
+<h2  style="text-align: center;"> PRODUCTS</h2>
+
+<table border="3" class="productsTable" >
+    <thead>
+        <tr>
+            <th>productName</th>
+            <th>productType</th>
+            <th>productPrice</th>
+            <th>productQuantity</th>
+            <th>productAvailability</th>
+            <th>productRating</th>
+
+
+            
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr *ngFor="let product of allProducts ">
+            <td><b>{{product.productName}}</b></td>
+            <td>{{product.productType}}</td>
+            <td>{{product.productPrice}}</td>
+            <td>{{product.productQuantity}}</td>
+            <td>{{product.productAvailability}}</td>
+            <td>{{product.productRating}}</td>
+    
+
+           
+
+        </tr>
+    </tbody>
+</table>

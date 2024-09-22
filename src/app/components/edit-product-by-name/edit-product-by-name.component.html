@@ -1,0 +1,63 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<img src ="assets/book.jpeg">
+
+<form class="getByName" #getProductsByName="ngForm" (ngSubmit)= "onSubmit()" >
+
+    <input type="text"name="type" placeholder="Enter product Name"  required #type="ngModel" [(ngModel)]="productsName">
+    &nbsp;
+    <button type="submit" ><i class="fa fa-search"></i></button>
+</form>
+
+<table border="3" class="productsTable" *ngIf = "product.productName!=null" >
+    <thead >
+        <tr>
+            <th>productName</th>
+            <th>productType</th>
+            <th>productPrice</th>
+            <th>productQuantity</th>
+            <th>productAvailability</th>
+            <th>productRating</th>
+
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+
+            <td><b>{{product.productName}}</b></td>
+            <td>{{product.productType}}</td>
+            <td>{{product.productPrice}}</td>
+            <td>{{product.productQuantity}}</td>
+            <td>{{product.productAvailability}}</td>
+            <td>{{product.productRating}}</td>
+
+           
+
+        </tr>
+    </tbody>
+</table>
+<br><br><br><br><br><br><br><br>
+
+<form *ngIf = "product.productName!=null"  class="update" #edit="ngForm" (ngSubmit)= "onSubmitUpdate()">
+    PRODUCT NAME: <input type="text" size="60" name="name" placeholder="{{product.productName}}" #name="ngModel" [(ngModel)]="product.productName">
+    <br>
+    PRODUCT TYPE: <input type="text" size="61" name="type" placeholder="{{product.productType}}" #type="ngModel" [(ngModel)]="product.productType">
+    <br>
+    PRODUCT PRICE: <input type="text" size="60" name="price" placeholder="{{product.productPrice}}" #price="ngModel" [(ngModel)]="product.productPrice">
+    <br>
+
+    PRODUCT QUANTITY: <input type="text" size="54" name="quantity" placeholder="{{product.productQuantity}}" #quantity="ngModel" [(ngModel)]="product.productQuantity">
+    
+    <br>
+    PRODUCT AVAILABILITY: <input type="text" size="50" name="availability" placeholder="{{product.productAvailability}}" #availability="ngModel" [(ngModel)]="product.productAvailability">
+    
+    <br>
+    PRODUCT RATING: <input type="text" size="58" name="rating" placeholder="{{product.productRating}}" #rating="ngModel" [(ngModel)]="product.productRating">
+    <br>
+<br>
+
+    <input type="submit" value="UPDATE" >
+
+
+

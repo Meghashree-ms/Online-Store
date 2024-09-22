@@ -1,0 +1,40 @@
+form{
+    float: left;
+}
+
+input[type=submit],input[type=reset]{
+	background-color: #FAED26;
+	border: 1px;
+	text-decoration: none;
+	color: black;
+	padding: 10px 10px;
+	margin: 10px 10px;
+	cursor: pointer;
+    border-radius: 8px;
+}
+
+input[type=text],input[type=password],input[type=date]{
+    border: 3px solid #FAED26;
+    border-radius: 4px;
+    
+
+}
+input[type=text],input[type=password],input[type=date]{
+padding: 5px 10px;
+margin: 3px 0;
+
+}
+
+div {
+    color: #12232E;
+}
+
+label{
+    color: black;
+}
+
+img{
+    height: 500px;
+    width: 500px;
+    float: right;
+}

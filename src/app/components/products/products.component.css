@@ -1,0 +1,44 @@
+ .productsTable {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    float: left;
+    text-align: center;
+    border-style: solid;
+    margin-top: 50px;
+}
+
+.productsTable thead tr {
+    background-color: black;
+    color: #ffffff;
+    text-align: left;
+}
+
+.productsTable th,
+.productsTable td {
+    padding: 12px 15px;
+}
+
+.productsTable tbody tr {
+    border-bottom: 1px solid black;
+}
+
+.productsTable thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #12232E;
+}
+
+.prodoductsTable tr:nth-child(even){background-color: #f2f2f2;}
+
+.productsTable tr:hover {background-color: white;}
+
+img{
+    margin-top: 20px;
+    height: 500px;
+    width: 350px;
+    float: right;
+} 
+
